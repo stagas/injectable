@@ -1,0 +1,12 @@
+{
+  "name": "injectable",
+  "version": "0.0.1",
+  "description": "dependency injection",
+  "keywords": ["dependency injection"],
+  "author": "stagas",
+  "license": "MIT",
+  "dependencies": {
+    "stagas/fan": "*"
+  },
+  "scripts": ["index.js"]
+}

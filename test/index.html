@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>injectable</title>
+    <link rel="stylesheet" href="../build/build.css">
+  </head>
+  <body>
+    <script src="../build/build.js"></script>
+    <script>var injectable = require('injectable')</script>
+    <script>
+      var tests = 2
+      function pass(){
+        --tests || document.write('all pass');
+      }
+
+      function assert(expr){
+        if (!expr) throw new Error('failed');
+      }
+    </script>
+    <script>
+      var context = {
+        foo: 'bar'
+      , hello: 'world'
+      };
+
+      var inject = injectable(context);
+
+      inject(function(foo, hello){
+        assert('bar'==foo);
+        assert('world'==hello);
+        pass();
+      });
+
+      inject(function(foo, hello, there){
+        assert('bar'==foo);
+        assert('world'==hello);
+        assert(null==there);
+        pass();
+      });
+    </script>
+  </body>
+</html>
