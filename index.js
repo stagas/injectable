@@ -16,7 +16,7 @@ var fan = require('fan');
 module.exports = function(context){
   return function(fn){
     var args = fan(fn).map(values(context));
-    fn.apply(this, args);
+    return fn.apply(this, args);
   };
 };
 

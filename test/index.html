@@ -8,7 +8,7 @@
     <script src="../build/build.js"></script>
     <script>var injectable = require('injectable')</script>
     <script>
-      var tests = 2
+      var tests = 3
       function pass(){
         --tests || document.write('all pass');
       }
@@ -37,6 +37,9 @@
         assert(null==there);
         pass();
       });
+
+      assert('world'==inject(function(hello){ return hello; }));
+      pass();
     </script>
   </body>
 </html>
